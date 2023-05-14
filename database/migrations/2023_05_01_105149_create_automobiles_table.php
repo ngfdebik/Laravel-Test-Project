@@ -16,13 +16,13 @@ return new class extends Migration
             $table->string('brand')->check('brand'!='');
             $table->string('model')->check('model'!='');
             $table->string('color')->check('color'!='');
-            $table->string('state_number_RF')->unique()->check('state_number_RF'!='');
-            $table->boolean('in_the_parking')->default(1);
-            $table->unsignedBigInteger('person_id');
+            $table->string('stateNumberRF')->unique()->check('stateNumberRF'!='');
+            $table->boolean('inTheParking')->default(1);
+            $table->unsignedBigInteger('personId');
 
-            $table->foreign('person_id', 'automobile_person_fk')->on('persons')->references('id');
+            $table->foreign('personId', 'automobile_person_fk')->on('persons')->references('id');
 
-            $table->index('person_id', 'automobile_person_idx');
+            $table->index('personId', 'automobile_person_idx');
         });
     }
 
