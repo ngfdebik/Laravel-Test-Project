@@ -13,7 +13,6 @@ class Persons extends Model
     use SoftDeletes;
 
     public $timestamps = false;
-    //protected $guarded = [];
     protected $fillable = [
         'id', 'name', 'gender',
         'telephone','address',
