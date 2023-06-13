@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Persons;
+use App\Models\User;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Automobile>
@@ -26,7 +26,7 @@ class AutomobileFactory extends Factory
             'color' => fake()->colorName(),
             'stateNumberRF' => $faker->unique()->vehicleRegistration('[A-Z]{1}-[0-9]{3}-[A-Z]{2}'),
             'inTheParking' => 1,
-            'personId' => Persons::getRandomUserId()->id,
+            'user_id' => User::getRandomUserId()->id,
         ];
     }
 }

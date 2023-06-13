@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('name')->check('name'!='');
+            $table->string('gender')->check('gender'!='');
+            $table->string('telephone')->unique()->check('telephone'!='');
+            $table->string('address')->nullable();
             $table->timestamps();
         });
+        
+        DB::statement('ALTER TABLE users ADD CONSTRAINT MINIMO CHECK (LENGTH(name) >= 3)');
     }
 
     /**

@@ -10,9 +10,6 @@ class Automobile extends Model
 {
     use HasFactory;
 
-    protected $updated_at = true;
-    protected $created_at = true;
-
     public static function getAutos(){
         return DB::table('automobiles')
             ->get();
@@ -21,27 +18,27 @@ class Automobile extends Model
     public static function getIdByPerson($person){
         return DB::table('automobiles')
         ->select('id')
-        ->where('personId', $person)
+        ->where('user_id', $person)
         ->get();
     }
 
     public static function getPersonIdByAutoId($auto){
         return DB::table('automobiles')
-        ->select('personId')
+        ->select('user_id')
         ->where('id', $auto)
         ->first();
     }
 
     public static function getCountAutoByPersonId($personId){
         return DB::table('automobiles')
-        ->where('personId', $personId)
+        ->where('user_id', $personId)
         ->get()
         ->count('*');
     }
 
     public static function getAutoInParking(){
         return DB::table('automobiles')
-        ->select(['id','brand', 'model', 'color', 'stateNumberRF', 'inTheParking','personId'])
+        ->select(['id','brand', 'model', 'color', 'stateNumberRF', 'inTheParking','user_id'])
         ->where('inTheParking', 1)
         ->get();
     }

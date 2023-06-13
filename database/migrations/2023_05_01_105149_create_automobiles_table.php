@@ -18,11 +18,12 @@ return new class extends Migration
             $table->string('color')->check('color'!='');
             $table->string('stateNumberRF')->unique()->check('stateNumberRF'!='');
             $table->boolean('inTheParking')->default(1);
-            $table->unsignedBigInteger('personId');
+            $table->unsignedBigInteger('user_id');
+            $table->timestamps();
 
-            $table->foreign('personId', 'automobile_person_fk')->on('persons')->references('id');
+            $table->foreign('user_id', 'automobile_user_fk')->on('users')->references('id');
 
-            $table->index('personId', 'automobile_person_idx');
+            $table->index('user_id', 'automobile_user_idx');
         });
     }
 

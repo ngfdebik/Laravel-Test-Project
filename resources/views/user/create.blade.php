@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-        <form action="{{ route('person.store') }}" method="post" target="_blank" enctype="multipart/form-data">@csrf
+        <form action="{{ route('user.store') }}" method="post" target="_blank" enctype="multipart/form-data">@csrf
                 <h1>Client</h1>
                 <div class="row">
                         <div class="col">
