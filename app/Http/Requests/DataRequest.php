@@ -23,9 +23,9 @@ class DataRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3',
-            'gender' => 'required|regex:/^(Male|male|MALE|Female|FEMALE|female)$',
-            'telephone' => 'required|unique:users,telephone|regex:/^1-?\(?\d{3}(\)|-|\.)?\d{3}(-|\.)?\d{4}$',
-            'stateNumberRF' => 'required|regex:/^[A-Z]{1}-\d{3}-[A-Z]{2}$',
+            'gender' => ['required','regex:/^(Male|male|MALE|Female|FEMALE|female)$/',],
+            'telephone' => ['required','unique:users,telephone','regex:/^1-?\(?\d{3}(\)|-|\.)?\d{3}(-|\.)?\d{4}$/',],
+            'stateNumberRF' => ['required','regex:/^[A-Z]{1}-\d{3}-[A-Z]{2}$/',],
         ];
     }
 }
