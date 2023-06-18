@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\DataRequest;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\AutomobileResource;
 
@@ -30,7 +30,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(UserRequest $request)
+    public function store(DataRequest $request)
     {
         $req = collect($request->all());
 
@@ -72,7 +72,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserRequest $request, string $id)
+    public function update(DataRequest $request, string $id)
     {
         $req = collect($request->all());
         $autosId = AutomobilesController::getIdByPerson($id);
