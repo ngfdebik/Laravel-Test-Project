@@ -13,10 +13,9 @@ use App\Http\Controllers\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [UserController::class, 'index'])->name('user.index');
 
 Route::prefix('users')->group(function(){
-    Route::get('/', [UserController::class, 'index'])->name('user.index');
-
     Route::get('/create', [UserController::class, 'create'])->name('user.create');
 
     Route::post('/', [UserController::class, 'store'])->name('user.store');

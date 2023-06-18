@@ -18,7 +18,6 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="{{ route('user.create') }}">Create</a>
-                        <a class="nav-link" href="{{ route('user.cars') }}">Cars</a>
                     </div>
                 </div>
             </div>
