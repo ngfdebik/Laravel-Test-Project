@@ -65,9 +65,7 @@ class UserController extends Controller
         $content = json_decode(json_encode(UserResource::collection($data)));
 
         $user = $content[0];
-        //dd($user);
         $autos = json_decode(json_encode(AutomobileResource::collection($data)));
-        //dd($autos);
         return view('user.edit', ['user'=>$user, 'autos'=>$autos]);
     }
 
